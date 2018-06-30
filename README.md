@@ -8,7 +8,7 @@ gIOTA
 
 Client library for the IOTA reference implementation (IRI).
 
-This branch has support for [FPGA based hardware POW accelerator](https://github.com/LampaLab/iota_fpga)
+This branch supports [FPGA based hardware POW accelerator](https://github.com/LampaLab/iota_fpga)
 
 This library is still in flux and there maybe breaking changes.
 
