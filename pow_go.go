@@ -28,6 +28,7 @@ import (
 	"errors"
 	"runtime"
 	"sync"
+	"os"
 )
 
 // trytes
@@ -68,6 +69,10 @@ func init() {
 
 // GetBestPoW returns most preferable PoW func.
 func GetBestPoW() (string, PowFunc) {
+
+	if _, err := os.Stat("/dev/cpow-ctrl"); !os.IsNotExist(err) {
+		return "PowFPGA", PowFPGA
+	}
 
 	// PowGo is the last and default return value
 	powOrderPreference := []string{"PowCL", "PowSSE", "PowCARM64", "PowC128", "PowC"}
